@@ -1,6 +1,7 @@
 #!/bin/sh
 #coding:utf-8
 #coding:utf-8
+shopt -s xpg_echo
 
 echo "\n------( HyperQube START! )------\n"
 

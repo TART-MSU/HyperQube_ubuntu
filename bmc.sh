@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 #coding:utf-8
 #coding:utf-8
+shopt -s xpg_echo
 
 # HyperQube subTools
 GENQBF=src/genqbf
