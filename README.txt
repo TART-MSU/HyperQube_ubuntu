@@ -47,9 +47,9 @@ Note that <k> is a natural number specifies the length of unrolling. To observe 
 
 ## Run Some Simple Examples:
 We now provide two demo examples. To run, execute each of the followings:
-- (Example 1: bakery with symmetry:) 
+  - Example 1: bakery with symmetry: 
     ```./hyperqube.sh demo/bakery.smv demo/symmetry 10 pes```
-- (Example 2: SNARK with linearizability) 
+  - Example 2: SNARK with linearizability: 
     ```./hyperqube.sh demo/SNARK_conc.smv demo/SNARK_seq.smv demo/linearizability 18 pes ```
 
 
