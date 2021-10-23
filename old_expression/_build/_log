@@ -1,8 +1,10 @@
 ### Starting build.
 # Target: src/progs/genqbf.ml.depends, tags: { extension:ml, file:src/progs/genqbf.ml, include, ocaml, ocamldep, quiet }
-ocamldep.opt -modules src/progs/genqbf.ml > src/progs/genqbf.ml.depends
+ocamldep.opt -modules src/progs/genqbf.ml > src/progs/genqbf.ml.depends # cached
 # Target: src/AIGER.mli.depends, tags: { extension:mli, file:src/AIGER.mli, include, ocaml, ocamldep, quiet }
-ocamldep.opt -modules src/AIGER.mli > src/AIGER.mli.depends
+ocamldep.opt -modules src/AIGER.mli > src/AIGER.mli.depends # cached
+# Target: src/AIGER.cmi, tags: { byte, compile, extension:mli, file:src/AIGER.mli, include, interf, ocaml, quiet }
+ocamlc.opt -c -w -4-32 -I src -I src/progs -o src/AIGER.cmi src/AIGER.mli # cached
 # Target: src/Circuit.mli.depends, tags: { extension:mli, file:src/Circuit.mli, include, ocaml, ocamldep, quiet }
 ocamldep.opt -modules src/Circuit.mli > src/Circuit.mli.depends # cached
 # Target: src/Expression.mli.depends, tags: { extension:mli, file:src/Expression.mli, include, ocaml, ocamldep, quiet }
@@ -32,19 +34,21 @@ ocamlc.opt -c -w -4-32 -I src -I src/progs -o src/Global.cmi src/Global.mli # ca
 # Target: src/ExprLexer.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:src/ExprLexer.cmo, file:src/ExprLexer.ml, implem, include, ocaml, quiet }
 ocamlc.opt -c -w -4-32 -I src -I src/progs -o src/ExprLexer.cmo src/ExprLexer.ml # cached
 # Target: src/progs/GenArgs.mli.depends, tags: { extension:mli, file:src/progs/GenArgs.mli, include, ocaml, ocamldep, quiet }
-ocamldep.opt -modules src/progs/GenArgs.mli > src/progs/GenArgs.mli.depends
+ocamldep.opt -modules src/progs/GenArgs.mli > src/progs/GenArgs.mli.depends # cached
 # Target: src/QBF.mli.depends, tags: { extension:mli, file:src/QBF.mli, include, ocaml, ocamldep, quiet }
-ocamldep.opt -modules src/QBF.mli > src/QBF.mli.depends
+ocamldep.opt -modules src/QBF.mli > src/QBF.mli.depends # cached
 # Target: src/Model.mli.depends, tags: { extension:mli, file:src/Model.mli, include, ocaml, ocamldep, quiet }
-ocamldep.opt -modules src/Model.mli > src/Model.mli.depends
-# Target: src/Property.mli.depends, tags: { extension:mli, file:src/Property.mli, include, ocaml, ocamldep, quiet }
-ocamldep.opt -modules src/Property.mli > src/Property.mli.depends
+ocamldep.opt -modules src/Model.mli > src/Model.mli.depends # cached
 # Target: src/Model.cmi, tags: { byte, compile, extension:mli, file:src/Model.mli, include, interf, ocaml, quiet }
-ocamlc.opt -c -w -4-32 -I src -I src/progs -o src/Model.cmi src/Model.mli
+ocamlc.opt -c -w -4-32 -I src -I src/progs -o src/Model.cmi src/Model.mli # cached
+# Target: src/Property.mli.depends, tags: { extension:mli, file:src/Property.mli, include, ocaml, ocamldep, quiet }
+ocamldep.opt -modules src/Property.mli > src/Property.mli.depends # cached
 # Target: src/Property.cmi, tags: { byte, compile, extension:mli, file:src/Property.mli, include, interf, ocaml, quiet }
-ocamlc.opt -c -w -4-32 -I src -I src/progs -o src/Property.cmi src/Property.mli
+ocamlc.opt -c -w -4-32 -I src -I src/progs -o src/Property.cmi src/Property.mli # cached
 # Target: src/QBF.cmi, tags: { byte, compile, extension:mli, file:src/QBF.mli, include, interf, ocaml, quiet }
-ocamlc.opt -c -w -4-32 -I src -I src/progs -o src/QBF.cmi src/QBF.mli
+ocamlc.opt -c -w -4-32 -I src -I src/progs -o src/QBF.cmi src/QBF.mli # cached
+# Target: src/progs/GenArgs.cmi, tags: { byte, compile, extension:mli, file:src/progs/GenArgs.mli, include, interf, ocaml, quiet }
+ocamlc.opt -c -w -4-32 -I src/progs -I src -o src/progs/GenArgs.cmi src/progs/GenArgs.mli # cached
 # Target: src/Interface.mli.depends, tags: { extension:mli, file:src/Interface.mli, include, ocaml, ocamldep, quiet }
 ocamldep.opt -modules src/Interface.mli > src/Interface.mli.depends # cached
 # Target: src/Interface.cmi, tags: { byte, compile, extension:mli, file:src/Interface.mli, include, interf, ocaml, quiet }
@@ -54,27 +58,21 @@ ocamldep.opt -modules src/Parser.ml > src/Parser.ml.depends # cached
 # Target: src/Parser.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:src/Parser.cmo, file:src/Parser.ml, implem, include, ocaml, quiet }
 ocamlc.opt -c -w -4-32 -I src -I src/progs -o src/Parser.cmo src/Parser.ml # cached
 # Target: src/PropLexer.mll, tags: { extension:mll, file:src/PropLexer.mll, include, lexer, ocaml, ocamllex, quiet }
-ocamllex.opt -q src/PropLexer.mll
+ocamllex.opt -q src/PropLexer.mll # cached
 # Target: src/PropLexer.ml.depends, tags: { extension:ml, file:src/PropLexer.ml, include, ocaml, ocamldep, quiet }
 ocamldep.opt -modules src/PropLexer.ml > src/PropLexer.ml.depends # cached
 # Target: src/PropParser.mly, tags: { extension:mly, file:src/PropParser.mly, include, infer, ocaml, ocamlyacc, parser, quiet }
-ocamlyacc src/PropParser.mly
-+ ocamlyacc src/PropParser.mly
-22 shift/reduce conflicts.
+ocamlyacc src/PropParser.mly # cached
 # Target: src/PropParser.mli.depends, tags: { extension:mli, file:src/PropParser.mli, include, ocaml, ocamldep, quiet }
 ocamldep.opt -modules src/PropParser.mli > src/PropParser.mli.depends # cached
 # Target: src/PropParser.cmi, tags: { byte, compile, extension:mli, file:src/PropParser.mli, include, interf, ocaml, quiet }
 ocamlc.opt -c -w -4-32 -I src -I src/progs -o src/PropParser.cmi src/PropParser.mli # cached
 # Target: src/PropLexer.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:src/PropLexer.cmo, file:src/PropLexer.ml, implem, include, ocaml, quiet }
 ocamlc.opt -c -w -4-32 -I src -I src/progs -o src/PropLexer.cmo src/PropLexer.ml # cached
-# Target: src/AIGER.cmi, tags: { byte, compile, extension:mli, file:src/AIGER.mli, include, interf, ocaml, quiet }
-ocamlc.opt -c -w -4-32 -I src -I src/progs -o src/AIGER.cmi src/AIGER.mli
-# Target: src/progs/GenArgs.cmi, tags: { byte, compile, extension:mli, file:src/progs/GenArgs.mli, include, interf, ocaml, quiet }
-ocamlc.opt -c -w -4-32 -I src/progs -I src -o src/progs/GenArgs.cmi src/progs/GenArgs.mli
 # Target: src/progs/genqbf.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:src/progs/genqbf.cmo, file:src/progs/genqbf.ml, implem, include, ocaml, quiet }
-ocamlc.opt -c -w -4-32 -I src/progs -I src -o src/progs/genqbf.cmo src/progs/genqbf.ml
+ocamlc.opt -c -w -4-32 -I src/progs -I src -o src/progs/genqbf.cmo src/progs/genqbf.ml # cached
 # Target: src/AIGER.ml.depends, tags: { extension:ml, file:src/AIGER.ml, include, ocaml, ocamldep, quiet }
-ocamldep.opt -modules src/AIGER.ml > src/AIGER.ml.depends
+ocamldep.opt -modules src/AIGER.ml > src/AIGER.ml.depends # cached
 # Target: src/Expression.ml.depends, tags: { extension:ml, file:src/Expression.ml, include, ocaml, ocamldep, quiet }
 ocamldep.opt -modules src/Expression.ml > src/Expression.ml.depends # cached
 # Target: src/Expression.cmx, tags: { compile, extension:cmx, extension:ml, file:src/Expression.cmx, file:src/Expression.ml, implem, include, native, ocaml, quiet }
@@ -87,6 +85,8 @@ ocamldep.opt -modules src/SymbolTable.mli > src/SymbolTable.mli.depends # cached
 ocamlc.opt -c -w -4-32 -I src -I src/progs -o src/SymbolTable.cmi src/SymbolTable.mli # cached
 # Target: src/SymbolTable.cmx, tags: { compile, extension:cmx, extension:ml, file:src/SymbolTable.cmx, file:src/SymbolTable.ml, implem, include, native, ocaml, quiet }
 ocamlopt.opt -c -w -4-32 -I src -I src/progs -o src/SymbolTable.cmx src/SymbolTable.ml # cached
+# Target: src/AIGER.cmx, tags: { compile, extension:cmx, extension:ml, file:src/AIGER.cmx, file:src/AIGER.ml, implem, include, native, ocaml, quiet }
+ocamlopt.opt -c -w -4-32 -I src -I src/progs -o src/AIGER.cmx src/AIGER.ml # cached
 # Target: src/Circuit.ml.depends, tags: { extension:ml, file:src/Circuit.ml, include, ocaml, ocamldep, quiet }
 ocamldep.opt -modules src/Circuit.ml > src/Circuit.ml.depends # cached
 # Target: src/Circuit.cmx, tags: { compile, extension:cmx, extension:ml, file:src/Circuit.cmx, file:src/Circuit.ml, implem, include, native, ocaml, quiet }
@@ -106,19 +106,21 @@ ocamlopt.opt -c -w -4-32 -I src -I src/progs -o src/ExprParser.cmx src/ExprParse
 # Target: src/ExprLexer.cmx, tags: { compile, extension:cmx, extension:ml, file:src/ExprLexer.cmx, file:src/ExprLexer.ml, implem, include, native, ocaml, quiet }
 ocamlopt.opt -c -w -4-32 -I src -I src/progs -o src/ExprLexer.cmx src/ExprLexer.ml # cached
 # Target: src/progs/GenArgs.ml.depends, tags: { extension:ml, file:src/progs/GenArgs.ml, include, ocaml, ocamldep, quiet }
-ocamldep.opt -modules src/progs/GenArgs.ml > src/progs/GenArgs.ml.depends
+ocamldep.opt -modules src/progs/GenArgs.ml > src/progs/GenArgs.ml.depends # cached
 # Target: src/QBF.ml.depends, tags: { extension:ml, file:src/QBF.ml, include, ocaml, ocamldep, quiet }
-ocamldep.opt -modules src/QBF.ml > src/QBF.ml.depends
+ocamldep.opt -modules src/QBF.ml > src/QBF.ml.depends # cached
 # Target: src/Model.ml.depends, tags: { extension:ml, file:src/Model.ml, include, ocaml, ocamldep, quiet }
 ocamldep.opt -modules src/Model.ml > src/Model.ml.depends
 # Target: src/Property.ml.depends, tags: { extension:ml, file:src/Property.ml, include, ocaml, ocamldep, quiet }
-ocamldep.opt -modules src/Property.ml > src/Property.ml.depends
+ocamldep.opt -modules src/Property.ml > src/Property.ml.depends # cached
+# Target: src/Property.cmx, tags: { compile, extension:cmx, extension:ml, file:src/Property.cmx, file:src/Property.ml, implem, include, native, ocaml, quiet }
+ocamlopt.opt -c -w -4-32 -I src -I src/progs -o src/Property.cmx src/Property.ml # cached
 # Target: src/Model.cmx, tags: { compile, extension:cmx, extension:ml, file:src/Model.cmx, file:src/Model.ml, implem, include, native, ocaml, quiet }
 ocamlopt.opt -c -w -4-32 -I src -I src/progs -o src/Model.cmx src/Model.ml
-# Target: src/Property.cmx, tags: { compile, extension:cmx, extension:ml, file:src/Property.cmx, file:src/Property.ml, implem, include, native, ocaml, quiet }
-ocamlopt.opt -c -w -4-32 -I src -I src/progs -o src/Property.cmx src/Property.ml
 # Target: src/QBF.cmx, tags: { compile, extension:cmx, extension:ml, file:src/QBF.cmx, file:src/QBF.ml, implem, include, native, ocaml, quiet }
-ocamlopt.opt -c -w -4-32 -I src -I src/progs -o src/QBF.cmx src/QBF.ml
+ocamlopt.opt -c -w -4-32 -I src -I src/progs -o src/QBF.cmx src/QBF.ml # cached
+# Target: src/progs/GenArgs.cmx, tags: { compile, extension:cmx, extension:ml, file:src/progs/GenArgs.cmx, file:src/progs/GenArgs.ml, implem, include, native, ocaml, quiet }
+ocamlopt.opt -c -w -4-32 -I src/progs -I src -o src/progs/GenArgs.cmx src/progs/GenArgs.ml # cached
 # Target: src/Interface.ml.depends, tags: { extension:ml, file:src/Interface.ml, include, ocaml, ocamldep, quiet }
 ocamldep.opt -modules src/Interface.ml > src/Interface.ml.depends # cached
 # Target: src/Interface.cmx, tags: { compile, extension:cmx, extension:ml, file:src/Interface.cmx, file:src/Interface.ml, implem, include, native, ocaml, quiet }
@@ -131,13 +133,9 @@ ocamldep.opt -modules src/PropParser.ml > src/PropParser.ml.depends # cached
 ocamlopt.opt -c -w -4-32 -I src -I src/progs -o src/PropParser.cmx src/PropParser.ml # cached
 # Target: src/PropLexer.cmx, tags: { compile, extension:cmx, extension:ml, file:src/PropLexer.cmx, file:src/PropLexer.ml, implem, include, native, ocaml, quiet }
 ocamlopt.opt -c -w -4-32 -I src -I src/progs -o src/PropLexer.cmx src/PropLexer.ml # cached
-# Target: src/AIGER.cmx, tags: { compile, extension:cmx, extension:ml, file:src/AIGER.cmx, file:src/AIGER.ml, implem, include, native, ocaml, quiet }
-ocamlopt.opt -c -w -4-32 -I src -I src/progs -o src/AIGER.cmx src/AIGER.ml
-# Target: src/progs/GenArgs.cmx, tags: { compile, extension:cmx, extension:ml, file:src/progs/GenArgs.cmx, file:src/progs/GenArgs.ml, implem, include, native, ocaml, quiet }
-ocamlopt.opt -c -w -4-32 -I src/progs -I src -o src/progs/GenArgs.cmx src/progs/GenArgs.ml
 # Target: src/progs/genqbf.cmx, tags: { compile, extension:cmx, extension:ml, file:src/progs/genqbf.cmx, file:src/progs/genqbf.ml, implem, include, native, ocaml, quiet }
-ocamlopt.opt -c -w -4-32 -I src/progs -I src -o src/progs/genqbf.cmx src/progs/genqbf.ml
+ocamlopt.opt -c -w -4-32 -I src/progs -I src -o src/progs/genqbf.cmx src/progs/genqbf.ml # cached
 # Target: src/progs/genqbf.native, tags: { dont_link_with, extension:native, file:src/progs/genqbf.native, include, link, native, ocaml, program, quiet }
-ocamlopt.opt unix.cmxa str.cmxa -I src -I src/progs src/Expression.cmx src/SymbolTable.cmx src/AIGER.cmx src/Circuit.cmx src/Debug.cmx src/Global.cmx src/ExprParser.cmx src/ExprLexer.cmx src/Interface.cmx src/Model.cmx src/Parser.cmx src/Property.cmx src/PropParser.cmx src/PropLexer.cmx src/QBF.cmx src/progs/GenArgs.cmx src/progs/genqbf.cmx -o src/progs/genqbf.native # cached
-# Parallel statistics: { count(total): 4(66), max: 2, min: 2, average(total): 2.000(1.061) }
+ocamlopt.opt unix.cmxa str.cmxa -I src -I src/progs src/Expression.cmx src/SymbolTable.cmx src/AIGER.cmx src/Circuit.cmx src/Debug.cmx src/Global.cmx src/ExprParser.cmx src/ExprLexer.cmx src/Interface.cmx src/Model.cmx src/Parser.cmx src/Property.cmx src/PropParser.cmx src/PropLexer.cmx src/QBF.cmx src/progs/GenArgs.cmx src/progs/genqbf.cmx -o src/progs/genqbf.native
+# No parallelism done
 # Compilation successful.
