@@ -1,0 +1,102 @@
+Cases that are NOT runnable on TACAS VM due to high computational demands:
+		We noticed that some large cases are not able to be reproduced using TACAS22 VM (i.e., processes are `killed`), including:
+			- SNARK_BUG_2 with Linearizability;
+			- Shortest path with grid size as 40x40;
+			- Shortest path with grid size as 60x60;
+			- Robustness path with grid size as 60x60.
+      - some results from cited paper [26]
+		We provide the statistical results of the above mentioned experiment in this file, which contains
+		results that were ran by a MACBook Pro as stated in the paper.
+
+
+
+
+(SNARK_BUG_2 with Linearizability)
+-------------------- Summary of Case 2.2 ---------------------
+case model and formula:
+|  Models:            cases/snark2_new_M1_concurrent.smv ,  cases/snark2_new_M2_sequential.smv
+|  HyperLTL formula:  cases/snark2_formula.hq
+
+model checking info:
+|  Quantifiers: AE
+|  Semantics:   pes
+|  num states:  3405  /  664
+|  Bound k:     30
+
+execution time report:
+|  parseSMV (sec): 50.57
+|  genqbf   (sec): 407.54
+|  QuABs    (sec): 327.02
+
+|  Total time    (sec): 785.13
+---------------------------------------------------------------
+
+
+
+(Shortest path with grid size as 40x40)
+------------------ Summary of Case SP 40x40  -------------------
+case model and formula:
+|  Model:             cases/robotic_sp_1600.smv
+|  HyperLTL formula:  cases/robotic_sp_formula.hq
+
+model checking info:
+|  Quantifiers: EA
+|  Semantics:   hpes
+|  num states:  308
+|  Bound k:     80
+
+execution time report:
+|  parseSMV (sec): 20.77
+|  genqbf   (sec): 30.51
+|  QuABs    (sec): 649.55
+
+|  Total time    (sec): 700.83
+---------------------------------------------------------------
+
+(Shortest path with grid size as 60x60)
+------------------ Summary of Case SP 60x60  -------------------
+case model and formula:
+|  Model:             cases/robotic_sp_3600.smv
+|  HyperLTL formula:  cases/robotic_sp_formula.hq
+
+model checking info:
+|  Quantifiers: EA
+|  Semantics:   hpes
+|  num states:  404
+|  Bound k:     120
+
+execution time report:
+|  parseSMV (sec): 49.72
+|  genqbf   (sec): 40.96
+|  QuABs    (sec): 1763.35
+
+|  Total time    (sec): 1854.03
+---------------------------------------------------------------
+
+
+(Robustness path with grid size as 60x60)
+------------------ Summary of Case RB 60x60  -------------------
+case model and formula:
+|  Model:             cases/robotic_robustness_3600.smv
+|  HyperLTL formula:  cases/robotic_robustness_formula.hq
+
+model checking info:
+|  Quantifiers: EA
+|  Semantics:   hpes
+|  num states:  1852
+|  Bound k:     120
+
+execution time report:
+|  parseSMV (sec): 1.63
+|  genqbf   (sec): 388.45
+|  QuABs    (sec): 1226.25
+
+|  Total time    (sec): 1616.33
+---------------------------------------------------------------
+
+
+
+(results from cited paper [26])
+  Shortest Path 40x40: 1166.11 sec
+  Shortest Path 60x60: 4892.86 sec
+  Path Robustness 60x60: Timeout 
